@@ -33,7 +33,7 @@ public class quickSort {
 
     private static int part(Integer[] a,int i,int l) {
 
-        int pivot =a[i++];
+        int pivot =a[i];
 
         while(i<l)
         {
