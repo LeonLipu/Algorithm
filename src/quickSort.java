@@ -7,7 +7,7 @@ public class quickSort {
 
 
     public static void main(String[] args) {
-        Integer [] a={12,32,34,33,54,34,35,26,43,88,45};
+        Integer [] a={12,32,33,8,54,34,35,26,43,88,45};
 
 
         quick(a,0,a.length-1);
@@ -18,7 +18,7 @@ public class quickSort {
 
 
 
-        if(i>=l)
+        if(i>l)
             return;
 
 
@@ -33,17 +33,20 @@ public class quickSort {
 
     private static int part(Integer[] a,int i,int l) {
 
-        int pivot =a[i];
 
-        while(i<l)
+
+        int pivot =i++;
+
+
+
+        while(i<=l)
         {
 
-            while(a[i]<pivot)
+            if(a[i]<a[pivot] )
                 i++;
-            while(a[l]>pivot)
+            else if(a[l]>a[pivot] )
                 l--;
-
-            if(l>i)
+            else if(l>i)
             {
                 int temp=a[i];
                 a[i]=a[l];
@@ -54,10 +57,21 @@ public class quickSort {
 
 
         }
+        i--;
 
-        System.out.println("index"+i);
 
-        return i;
+           int temp=a[i];
+           a[i]=a[pivot];
+           a[pivot]=temp;
+           pivot=i;
+
+
+
+
+
+        System.out.println("index"+pivot);
+
+        return pivot;
 
 
 
