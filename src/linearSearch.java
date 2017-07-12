@@ -24,10 +24,7 @@ public class linearSearch {
             {
                 flag=true;
                 break;
-
             }
-
-
         }
 
         return flag;

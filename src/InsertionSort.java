@@ -27,7 +27,6 @@ public class InsertionSort {
 
                      a[j+1]=a[j];
                      j--;
-
                  }
                  j++;
 
