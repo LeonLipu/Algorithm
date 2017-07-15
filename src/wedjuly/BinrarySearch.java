@@ -25,7 +25,8 @@ public class BinrarySearch {
             return false;
 
         if(a[m]>e)
-       return BinaryS(a,i,m-1,e);
+          return BinaryS(a,i,m-1,e);
+
         return  BinaryS(a,m+1,l,e);
 
     }
