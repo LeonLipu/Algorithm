@@ -33,5 +33,7 @@ public class HeapSort {
         a[l]=a[i];
         a[i]=t;
 
+        HeapS(a,l-1);
+
     }
 }
