@@ -4,8 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.PriorityQueue;
 
-/**
- * Created by brahmanandakar on 20/07/17.
+/**.
  * It is Distkhatra algorithm for getting shortest path from source vertex
  */
 public class GraphD {
