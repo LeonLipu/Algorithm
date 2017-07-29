@@ -1,4 +1,4 @@
-package july21fri;
+package july28fri;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,41 +12,33 @@ public class Graph {
         public Node(int id) {
             this.id = id;
         }
-    }
+    }//declaration of node
 
-    List<Node> nodeList;
+    List<Node> nodelist;
     public Graph(){
-
-        nodeList=new ArrayList<>();
+        nodelist=new ArrayList<>();
     }
 
-    public void addNode(int id ){
-        nodeList.add(new Node(id));
-    }
-
-    public Node getNodeById(int id ){
-        for (Node node : nodeList) {
+    public Node getNodeByNode(int id ){
+        for (Node node : nodelist) {
             if (node.id==id) {
                 return node;
             }
-
         }
         return null;
-
+    }
+    public void addNode(int id ){
+        nodelist.add(new Node(id));
     }
 
-
-    public void addEdge(int sid, int did){
-
-
-        Node snode=getNodeById(sid);
-        Node dnode =new Node(did);
+    public void addEdge(int sid, int did ){
+        Node snode=getNodeByNode(sid);
+        Node dnode=new Node(did);
         dnode.next=snode.next;
         snode.next=dnode;
     }
 
     public void createGraph(){
-
 
         addNode(0);
         addNode(1);
@@ -54,31 +46,31 @@ public class Graph {
         addNode(3);
         addNode(4);
         addNode(5);
+        addNode(6);
 
         addEdge(0,1);
         addEdge(0,2);
         addEdge(1,2);
-        addEdge(1,4);
+        addEdge(2,3);
+        addEdge(2,6);
+        addEdge(3,6);
         addEdge(3,5);
-        addEdge(4,5);
     }
+    public void printGraph(){
+        for (Node node : nodelist) {
 
+            while(node!=null){
+                System.out.print(node.id+"->");
+                node=node.next;
+            }
+            System.out.print("null");
+            System.out.println();
+        }
+    }
 
     public static void main(String[] args) {
         Graph graph=new Graph();
         graph.createGraph();
         graph.printGraph();
     }
-public void printGraph(){
-
-    for (Node node : nodeList) {
-        while(node!=null){
-            System.out.print(node.id+"-->");
-            node=node.next;
-        }
-        System.out.print("null");
-        System.out.println();
-    }
-
-}
 }
