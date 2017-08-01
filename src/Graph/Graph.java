@@ -11,7 +11,7 @@ import java.util.List;
 public class Graph {
 
 
-    private class GraphNode {
+     class GraphNode {
         int id;
         GraphNode next;
         int prentDist;
