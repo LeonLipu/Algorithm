@@ -1,7 +1,6 @@
 package Aug6sun;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by brahmanandakar on 06/08/17.
@@ -59,6 +58,37 @@ public class Graph {
 
     }
 
+    public boolean bfs(int sid,int did){
+
+
+        //declaration
+        Queue<Node> queue=new LinkedList<>();
+        Set<Integer> visited=new HashSet<>();
+
+        //initlization
+        queue.add(getNodeById(sid));
+        visited.add(sid);
+
+        while (!queue.isEmpty()) {
+            Node node=queue.remove();
+
+            System.out.print(node.id+"--");
+            if (node.id==did) {
+                return true;
+            }
+
+            while(node!=null){
+                if(!visited.contains(node.id)){
+                    queue.add(getNodeById(node.id));
+                    visited.add(node.id);
+                }
+                node=node.next;
+            }
+        }
+        return false;
+    }
+
+
     public void printGraph(){
         for (Node node : nodelist) {
             while(node!=null){
@@ -74,6 +104,7 @@ public class Graph {
         Graph graph=new Graph();
         graph.createGraph();
         graph.printGraph();
+        graph.bfs(0,5);
     }
 
 
