@@ -24,7 +24,6 @@ public class Tree {
     Node node;
     public void creatree(){
 
-Node  Node(0)
 Node n0= new Node(1);;
 Node n1= new Node(2);;
 Node n2= new Node(3);;
